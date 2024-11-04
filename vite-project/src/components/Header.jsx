@@ -1,6 +1,6 @@
 function Header() {
     return(
-        <div className="bg-gray700 flex flex-col items-center justify-center">
+        <div className="bg-gray700 flex flex-col items-center justify-center h-28">
             <img src="/Logo.png"/>
             <div className="flex gap-2">
                 <input type="text" placeholder="Adicione uma nova tarefa" className="bg-gray500 border-gray700 w-96 h-10 rounded-md custom-input px-4"/>
