@@ -1,4 +1,4 @@
-function Body() {
+export default function Body() {
   return (
     <div className="bg-gray600 h-screen flex flex-col pt-8">
       <div className="flex justify-around pb-3">
@@ -27,5 +27,3 @@ function Body() {
     </div>
   );
 }
-
-export default Body;
