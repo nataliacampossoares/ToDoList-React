@@ -1,14 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AppContext } from "../../contexts/AppContext";
 
 export default function Contador() {
-  const [contadorConcluidas, setContadorConcluidas] = useState(0);
+
+  const { contadorTarefasCriadas } = useContext(AppContext)
 
   return (
     <div className="flex justify-around pb-3">
       <div className="flex gap-2">
         <p className="text-lightBlue font-bold">Tarefas criadas</p>
         <span className="rounded-lg text-white bg-gray400 font-bold px-2">
-          {contadorConcluidas}
+          {contadorTarefasCriadas}
         </span>
       </div>
       <div className="flex gap-2">

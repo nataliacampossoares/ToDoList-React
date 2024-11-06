@@ -1,6 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AppContext from "../../contexts/AppContext";
 
 export default function Task() {
+  
   const [src, setSrc] = useState("./checkDefault.png");
   const [check, setCheck] = useState(false);
   const [colorText, setColorText] = useState("white");

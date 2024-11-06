@@ -1,17 +1,17 @@
-import { useState, useContext } from "react"; 
+import { useContext, useState } from "react"; 
 import Input from "./Input";
-import { TasksContext } from "../contexts/TasksContext";
+import { AppContext } from "../contexts/AppContext";
 
 export default function Header() {
   const [inputTask, setInputTask] = useState("");
-  const { addTask } = useContext(TasksContext); 
+  const { adicionarTask } = useContext(AppContext)
 
   const handleInputChange = (event) => {
     setInputTask(event.target.value);
   };
 
   const handleButtonClick = () => {
-    addTask(inputTask);
+    adicionarTask(inputTask);
     setInputTask("");
   };
 
