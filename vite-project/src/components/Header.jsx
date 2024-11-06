@@ -16,9 +16,9 @@ export default function Header() {
   };
 
   return (
-    <div className="bg-gray700 flex flex-col items-center justify-center h-28">
+    <div className="bg-gray700 flex flex-col items-center justify-center h-28 relative">
       <img src="/Logo.png" alt="Logo" />
-      <div className="flex gap-2">
+      <div className="flex gap-2 absolute bottom-0 translate-y-1/2">
         <Input value={inputTask} onChange={handleInputChange} />
         <button
           onClick={handleButtonClick}

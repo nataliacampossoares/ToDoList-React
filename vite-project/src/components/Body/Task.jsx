@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
-import AppContext from "../../contexts/AppContext";
+import {AppContext} from "../../contexts/AppContext";
 
-export default function Task() {
+export default function Task(props) {
   
+  const { contadorConcluidas, setContadorConcluidas, apagarTask } = useContext(AppContext)
+
   const [src, setSrc] = useState("./checkDefault.png");
   const [check, setCheck] = useState(false);
   const [colorText, setColorText] = useState("white");
@@ -13,6 +15,20 @@ export default function Task() {
     );
     setCheck((prev) => !prev);
     setColorText(prev => prev === "white" ? "gray" : "white");
+    
+    if(src === "./checkDefault.png"){
+      setContadorConcluidas(contadorConcluidas + 1)
+    } else {
+      setContadorConcluidas(contadorConcluidas - 1)
+    }
+  }
+
+  function handleTrash() {
+    apagarTask(props.id)
+    if(src === "./check.png"){
+      console.log("verificada")
+      setContadorConcluidas(contadorConcluidas - 1)
+    }
   }
 
   return (
@@ -22,10 +38,9 @@ export default function Task() {
         className="flex-1 mx-3"
         style={{ textDecoration: check ? "line-through" : "none", color: colorText }}
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni,
-        perferendis. Veniam suscipit tenetur
+        {props.texto}
       </p>
-      <img src="./trash.png" />
+      <img src="./trash.png" onClick={handleTrash}/>
     </div>
   );
 }

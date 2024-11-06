@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Body from "./components/Body/Body";
-import AppProvider from "./contexts/AppContext";
+import {AppProvider} from "./contexts/AppContext";
 
 function App() {
   return (

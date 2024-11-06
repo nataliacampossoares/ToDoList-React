@@ -2,20 +2,24 @@ import { createContext, useState } from "react";
 
 export const AppContext = createContext();
 
-export default function AppProvider({children}) {
-  const [addtTask, setAddTask] = useState([]);
-  const [contadorConcluidas, setContadorConcluidas] = useState(0);
-  const [contadorTarefasCriadas, setContadorTarefasCriadas] = useState(0);
-  const tasksList = []
+export function AppProvider({children}) {
+  const [tasksList, setTasksList] = useState([]);
+  const [contadorConcluidas, setContadorConcluidas] = useState(0)
 
   function adicionarTask(task) {
-    tasksList.push(task)
-    setContadorTarefasCriadas(contadorTarefasCriadas+1)
-    console.log(contadorTarefasCriadas)
-    console.log(tasksList)
+    setTasksList(prev => [...prev, task])
   }
 
-  const contexto = { adicionarTask, contadorTarefasCriadas };
+  function apagarTask(id) {
+    setTasksList(prev => {
+        const tasksListCopia = [...prev]
+        tasksListCopia.splice(id, 1)
+        return tasksListCopia
+    })
+}
+
+  const contexto = { adicionarTask, tasksList, contadorConcluidas, setContadorConcluidas, apagarTask };
+
   return (
     <AppContext.Provider value={contexto}>
       {children}

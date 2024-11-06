@@ -4,7 +4,7 @@ export default function Input({ value, onChange }) {
         <input
           type="text"
           placeholder="Adicione uma nova tarefa"
-          className="bg-gray500 border-gray700 w-96 h-10 rounded-md custom-input px-4"
+          className="bg-gray500 border-gray700 w-96 h-10 rounded-md custom-input px-4 text-white"
           value={value}
           onChange={onChange}
         />
