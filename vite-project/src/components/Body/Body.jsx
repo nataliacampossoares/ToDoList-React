@@ -24,7 +24,7 @@ export default function Body() {
         ) : (
           <>
             {tasksList.map((task, index) => (
-              <Task texto={task} id={index} />
+              <Task task={task} id={index} />
             ))}
           </>
         )}
