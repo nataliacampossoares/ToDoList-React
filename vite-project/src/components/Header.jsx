@@ -11,8 +11,12 @@ export default function Header() {
   };
 
   const handleButtonClick = () => {
-    adicionarTask(inputTask);
-    setInputTask("");
+    if (inputTask.trim() !== "") {
+        adicionarTask(inputTask);
+        setInputTask("");
+    } else {
+        
+    }
   };
 
   return (

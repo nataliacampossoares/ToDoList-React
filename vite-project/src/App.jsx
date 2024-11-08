@@ -6,7 +6,7 @@ import {AppProvider} from "./contexts/AppContext";
 function App() {
   return (
     <AppProvider>
-      <div className="bg-blueDark">
+      <div className="bg-red-600 min-h-screen flex flex-col">
         <Header />
         <Body />
       </div>
