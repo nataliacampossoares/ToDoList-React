@@ -15,7 +15,7 @@ export default function Header() {
         adicionarTask(inputTask);
         setInputTask("");
     } else {
-        
+
     }
   };
 
@@ -26,7 +26,7 @@ export default function Header() {
         <Input value={inputTask} onChange={handleInputChange} />
         <button
           onClick={handleButtonClick}
-          className="bg-darkBlue flex items-center gap-1 text-gray100 rounded-md p-2"
+          className="bg-darkBlue flex items-center gap-1 text-gray100 rounded-md p-2 text-sm"
         >
           Criar <img src="/plus.png" alt="Adicionar" />
         </button>
